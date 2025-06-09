@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="shortcut icon" type="png" href="{% static 'images/icon/favicon.png' %}">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Comaptible" content="IE=edge">
+	<title>LearnEd</title>
+	<meta name="desciption" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<script type="text/javascript" src="{% static 'script.js' %}"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script>
+		$(window).on('scroll', function () {
+			if ($(window).scrollTop()) {
+				$('nav').addClass('black');
+			} else {
+				$('nav').removeClass('black');
+			}
+		})
+	</script>
+</head>
+
+<body>
+	<!-- Navigatsiya paneli -->
+	<header id="header">
+		<nav>
+			<div class="logo"><img src="{% static 'images/icon/logo.png' %}" alt="logo"></div>
+			<ul>
+				<li><a class="active" href="">Bosh sahifa</a></li>
+				<li><a href="#portfolio_section">Portfolio</a></li>
+				<li><a href="#team_section">Jamoa</a></li>
+				<li><a href="#services_section">Xizmatlar</a></li>
+				<li><a href="#contactus_section">Bog‘lanish</a></li>
+			</ul>
+			<div class="srch">
+				<input type="text" class="search" placeholder="Bu yerdan qidiring...">
+				<img src="{% static 'images/icon/search.png' %}" alt="search" onclick="slide()">
+			</div>
+			<a class="get-started" href="login.html">Boshlash</a>
+			<img src="{% static 'images/icon/menu.png' %}" class="menu" onclick="sideMenu(0)" alt="menu">
+		</nav>
+
+		<div class="head-container">
+			<div class="quote">
+				<p>Ta’limning eng go‘zal jihati shundaki, uni hech kim sizdan tortib ololmaydi</p>
+				<h5>Ta’lim — bu bilim, ko‘nikma, qadriyatlar va odatlarni egallash jarayoni. Ta’lim uslublariga
+					o‘qitish, mashg‘ulot, hikoya qilish, muhokama va yo‘naltirilgan izlanish kiradi!</h5>
+				<div class="play">
+					<img src="{% static 'images/icon/play.png' %}" alt="play">
+					<span><a href="https://www.youtube.com/watch?v=KFyrgDO1WXk" target="_blank">Hozir tomosha
+							qiling</a></span>
+				</div>
+			</div>
+			<div class="svg-image">
+				<img src="{% static 'images/extra/svg1.jpg' %}" alt="svg">
+			</div>
+		</div>
+
+		<div class="side-menu" id="side-menu">
+			<div class="close" onclick="sideMenu(1)">
+				<img src="{% static 'images/icon/close.png' %}" alt="close">
+			</div>
+			<div class="user">
+				<img src="{% static 'images/creator/roshan.jpeg' %}" alt="Foydalanuvchi">
+				<p>roshank9419</p>
+			</div>
+			<ul>
+				<li><a href="#about_section">Biz haqimizda</a></li>
+				<li><a href="#portfolio_section">Portfolio</a></li>
+				<li><a href="#team_section">Jamoa</a></li>
+				<li><a href="#services_section">Xizmatlar</a></li>
+				<li><a href="#contactus_section">Bog‘lanish</a></li>
+				<li><a href="#feedBACK">Fikr-mulohaza</a></li>
+			</ul>
+		</div>
+	</header>
+
+
+	<!-- Mashhur Fanlar -->
+	<div class="title">
+		<span>LearnEd platformasidagi mashhur fanlar</span>
+	</div>
+	<br><br>
+	<div class="course">
+		<div class="cbox">
+			{% for category in categories %}
+			<div class="det">
+				<a href="{% static 'subjects/computer_courses.html' %}">
+					<img src="{% static 'images/courses/computer.png' %}">{{ category.name }}
+				</a>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+	<!-- BIZ HAQIMIZDA -->
+	<div class="diffSection" id="about_section">
+		<center>
+			<p style="font-size: 50px; padding: 100px">Biz haqimizda</p>
+		</center>
+		<div class="about-content">
+			<div class="side-image">
+				<img class="sideImage" src="{% static 'images/extra/e3.jpg' %}">
+			</div>
+			<div class="side-text">
+				<h2>Biz haqimizda nima deb o‘ylaysiz?</h2>
+				<p>
+					Ta'lim — bu bilim, ko‘nikma, qadriyatlar, e’tiqod va odatlarni o‘zlashtirish jarayonidir.
+					Ta’lim uslublariga o‘qitish, tayyorlash, hikoya qilish, muhokama qilish va yo‘naltirilgan
+					tadqiqotlar kiradi.
+					<br><br>
+					Ta’limiy veb-saytlar o‘yinlar, videolar yoki mavzuga oid manbalarni o‘z ichiga olgan bo‘lib,
+					ular o‘quv jarayonini yanada samarali, qiziqarli va qulay qilishga xizmat qiladi.
+					Ayniqsa, bugungi raqamli asrda bu kabi platformalar o‘quvchilar uchun ta’limni yanada jozibador
+					qiladi.
+					<br><br>
+					HTML (HyperText Markup Language), CSS (Cascading Style Sheets) va JavaScript texnologiyalari orqali
+					ta’limni oson va interaktiv tarzda yetkazish imkoniyati mavjud.
+				</p>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- PORTFOLIO -->
+	<div class="diffSection" id="portfolio_section">
+		<center>
+			<p style="font-size: 50px; padding: 100px; padding-bottom: 40px;">Statistika</p>
+		</center>
+		<div class="content">
+			<p>
+				“Ta’lim – bu kelajakka pasport, chunki ertangi kun bugun unga tayyorlanganlarga tegishlidir.”
+				“Sizning munosabatingiz sizning qobiliyatingizdan ko‘ra ko‘proq sizni baland cho‘qqilarga olib chiqadi.”
+				“Agar siz ta’lim qimmat deb o‘ylasangiz, jaholatni sinab ko‘ring.”
+				“Haqiqiy o‘qimishli inson – bu qanday o‘rganishni va o‘zgarishni o‘rgangan insondir.”
+			</p>
+		</div>
+	</div>
+
+	<div class="extra">
+		<p>Ushbu ma’lumotlar har yili yangilanib boradi</p>
+		<div class="smbox">
+			<span>
+				<center>
+					<div class="data">154</div>
+					<div class="det">Ro‘yxatdan o‘tgan talabalar</div>
+				</center>
+			</span>
+			<span>
+				<center>
+					<div class="data">62</div>
+					<div class="det">Umumiy kurslar</div>
+				</center>
+			</span>
+			<span>
+				<center>
+					<div class="data">56</div>
+					<div class="det">Ish bilan ta’minlangan talabalar</div>
+				</center>
+			</span>
+			<span>
+				<center>
+					<div class="data">27</div>
+					<div class="det">Loyihalar soni</div>
+				</center>
+			</span>
+		</div>
+	</div>
+
+
+
+
+	<!-- BIZ BILAN BOG'LANING -->
+	<div class="diffSection" id="contactus_section">
+		<center>
+			<p style="font-size: 50px; padding: 100px">Biz bilan bog‘laning</p>
+		</center>
+		<div class="csec"></div>
+		<div class="back-contact">
+			<div class="cc">
+				<form action="mailto:roshank9419@gmail.com" method="post" enctype="text/plain">
+					<label>Ism <span class="imp">*</span></label>
+					<label style="margin-left: 185px">Familiya <span class="imp">*</span></label><br>
+					<center>
+						<input type="text" name="fname" style="margin-right: 10px; width: 48%" required="required">
+						<input type="text" name="lname" style="width: 48%" required="required"><br>
+					</center>
+					<label>Email manzilingiz <span class="imp">*</span></label><br>
+					<input type="email" name="mail" style="width: 100%" required="required"><br>
+					<label>Xabaringiz <span class="imp">*</span></label><br>
+					<input type="text" name="message" style="width: 100%" required="required"><br>
+					<label>Qo‘shimcha ma’lumot</label><br>
+					<textarea name="additional"></textarea><br>
+					<button type="submit" id="csubmit">Xabarni yuborish</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Sliding Information -->
+	<marquee style="background: linear-gradient(to right, #FA4B37, #DF2771); margin-top: 50px;" direction="left"
+		onmouseover="this.stop()" onmouseout="this.start()" scrollamount="20">
+		<div class="marqu">
+			“Axborot texnologiyalarini bilgan, raqamli texnologiyalarni o‘zlashtirgan yoshlar – bizning kelajagimiz, eng
+			katta boyligimiz.”
+			“Bugungi kunda IT sohasini bilgan kadr – eng kerakli, eng qadrlangan kadrga aylanmoqda.”
+			“Kim axborot texnologiyalarini yaxshi o‘zlashtirsa, ertangi kun egasi bo‘ladi.”
+			“Yoshlarimiz kamida bitta xorijiy til va bitta dasturlash tilini bilishi kerak.”
+		</div>
+	</marquee>
+
+	<!-- FOOTER -->
+	<footer>
+		<div class="footer-container">
+			<div class="left-col">
+				<img src="{% static 'images/icon/logo - Copy.png' %}" style="width: 200px;">
+				<div class="logo"></div>
+				<div class="social-media">
+					<a href="#"><img src="{% static 'images/icon/fb.png' %}"></a>
+					<a href="#"><img src="{% static 'images/icon/insta.png' %}"></a>
+					<a href="#"><img src="{% static 'images/icon/tt.png' %}"></a>
+					<a href="#"><img src="{% static 'images/icon/ytube.png' %}"></a>
+					<a href="#"><img src="{% static 'images/icon/linkedin.png' %}"></a>
+				</div><br><br>
+				<p class="rights-text">Copyright © 2025 Created By Asilbek Mirolimov, Abhishek Dulat. All Rights Reserved.
+				</p>
+				<br>
+				<p>
+					<img src="{% static 'images/icon/location.png' %}"> Toshkent, Mars IT School<br>
+				</p><br>
+				<p>
+					<img src="{% static 'images/icon/phone.png' %}"> +91-1234-567-890<br>
+					<img src="{% static 'images/icon/mail.png' %}">&nbsp; learnedonline9419@gmail.com
+				</p>
+			</div>
+
+			<div class="right-col">
+				<h1 style="color: #fff">Our Newsletter</h1>
+				<div class="border"></div><br>
+				<p>Enter Your Email to get our News and updates.</p>
+				<form class="newsletter-form">
+					<input class="txtb" type="email" placeholder="Enter Your Email">
+					<input class="btn" type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</footer>
+	
+
+</body>
+
+</html>
