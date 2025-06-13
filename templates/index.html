@@ -88,7 +88,7 @@
 		<div class="cbox">
 			{% for category in categories %}
 			<div class="det">
-				<a href="{% static 'subjects/computer_courses.html' %}">
+				<a href="{% url 'course_list' slug=category.slug %}">
 					<img src="{% static 'images/courses/computer.png' %}">{{ category.name }}
 				</a>
 			</div>

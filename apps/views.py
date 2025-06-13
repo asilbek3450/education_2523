@@ -10,7 +10,7 @@ class HomePageView(ListView):
 
 class CourseListView(ListView):
     model = Course
-    template_name = 'main/course_list.html'
+    template_name = 'subjects/courses.html'
     context_object_name = 'courses'
 
     def get_queryset(self):
